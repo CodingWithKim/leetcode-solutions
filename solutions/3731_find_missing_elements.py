@@ -5,7 +5,7 @@
 # Difficulty: Easy
 # Link: https://leetcode.com/problems/find-missing-elements/
 #
-# Time Complexity: O(N log N + M) - where N is len(nums) and M is max(nums) - min(nums)
+# Time Complexity: O(N + M) - where N is len(nums) and M is max(nums) - min(nums)
 # Space Complexity: O(N)
 # --------------------------------------------------------
 class Solution(object):
@@ -14,8 +14,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        sorted_nums = sorted(nums)
-        start, end = sorted_nums[0], sorted_nums[-1]
+        start, end = min(nums), max(nums)
 
         seen = set(nums)
         result = []
